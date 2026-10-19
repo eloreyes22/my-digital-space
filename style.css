@@ -1,0 +1,754 @@
+
+/* ==========================================
+   MY DIGITAL SPACE
+   PORTAFOLIO PERSONAL - ELOISA REYES
+   ESTILO WARM & COZY
+========================================== */
+
+/* TIPOGRAFÍAS */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+
+/* PALETA DE COLORES */
+
+:root {
+    --rosa-principal: #d97978;
+    --rosa-suave: #f1c8c0;
+    --coral: #e99883;
+    --terracota: #bf6656;
+    --crema: #f9eee5;
+    --beige-calido: #ead3c5;
+    --vino: #874953;
+    --azul-denim: #425d73;
+    --azul-oscuro: #293e4d;
+    --blanco: #fffaf6;
+    --texto: #59463f;
+
+    --sombra: 0 15px 40px rgba(116, 70, 65, 0.14);
+}
+
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 12% 12%,
+            rgba(217, 121, 120, 0.30),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 88% 24%,
+            rgba(232, 153, 131, 0.23),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 80% 85%,
+            rgba(191, 102, 86, 0.15),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #f8e7dd 0%,
+            #fcf3eb 48%,
+            #ecd5c9 100%
+        );
+
+    background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--rosa-suave);
+    color: var(--vino);
+}
+
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+========================================== */
+
+.navbar {
+    width: 100%;
+    padding: 22px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(252, 238, 230, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+
+    box-shadow: 0 5px 25px rgba(104, 63, 61, 0.08);
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--vino);
+    letter-spacing: -0.7px;
+
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--terracota);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-menu a {
+    position: relative;
+    color: var(--azul-oscuro);
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--terracota);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--terracota);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ==========================================
+   PORTADA PRINCIPAL
+========================================== */
+
+.hero {
+    width: 90%;
+    max-width: 1300px;
+    min-height: 560px;
+
+    margin: 45px auto;
+    padding: 55px 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 38px;
+
+    background:
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(229, 139, 125, 0.36),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 92% 85%,
+            rgba(111, 137, 151, 0.25),
+            transparent 44%
+        ),
+        linear-gradient(
+            125deg,
+            #efd0c5 0%,
+            #fcf0e6 51%,
+            #ead2c7 100%
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 22px 55px rgba(112, 68, 65, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+
+/* DECORACIÓN DIFUMINADA */
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    top: -150px;
+    left: -110px;
+
+    border-radius: 50%;
+
+    background: rgba(221, 116, 109, 0.19);
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 370px;
+    height: 370px;
+
+    bottom: -190px;
+    right: 15%;
+
+    border-radius: 50%;
+
+    background: rgba(189, 100, 84, 0.20);
+    filter: blur(65px);
+
+    pointer-events: none;
+}
+
+
+/* TEXTO DE PORTADA */
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+
+    animation: aparecer 0.8s ease both;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 11px 20px;
+    margin-bottom: 25px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 250, 246, 0.70);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(12px);
+
+    color: var(--vino);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-text h1 {
+    font-size: clamp(38px, 4.8vw, 65px);
+    line-height: 1.13;
+    letter-spacing: -1.8px;
+
+    color: var(--azul-oscuro);
+    margin-bottom: 25px;
+}
+
+.hero-text h1 span {
+    color: var(--terracota);
+}
+
+.hero-text p {
+    max-width: 590px;
+    font-size: 17px;
+    line-height: 1.95;
+
+    color: #66514c;
+    margin-bottom: 30px;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 35px;
+    border-radius: 50px;
+
+    color: #fffaf6;
+    font-weight: 700;
+    font-size: 15px;
+
+    background: linear-gradient(
+        120deg,
+        #e28d79,
+        #bd695f,
+        #8d5059
+    );
+
+    box-shadow: 0 12px 25px rgba(156, 83, 76, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 17px 32px rgba(156, 83, 76, 0.34);
+}
+
+
+/* ==========================================
+   FOTOGRAFÍA DE PERFIL
+========================================== */
+
+.hero-photo {
+    flex: 0 0 350px;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    animation: aparecer 1s ease both;
+}
+
+.hero-photo::before {
+    content: "";
+
+    position: absolute;
+    inset: 22px -15px -18px 15px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(213, 117, 102, 0.55),
+        rgba(87, 111, 126, 0.35)
+    );
+
+    border-radius: 34px;
+    filter: blur(24px);
+    z-index: -1;
+}
+
+.hero-photo img {
+    display: block;
+
+    width: 350px;
+    max-width: 100%;
+    height: 440px;
+
+    object-fit: cover;
+    object-position: center 37%;
+
+    border-radius: 30px;
+    border: 7px solid rgba(255, 248, 241, 0.85);
+
+    box-shadow:
+        0 20px 38px rgba(71, 46, 49, 0.24),
+        0 5px 12px rgba(71, 46, 49, 0.10);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.hero-photo img:hover {
+    transform: translateY(-6px) rotate(1deg);
+
+    box-shadow: 0 27px 48px rgba(71, 46, 49, 0.27);
+}
+
+
+/* ==========================================
+   SECCIONES: SOBRE MÍ Y HABILIDADES
+========================================== */
+
+.section-card {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 35px auto;
+    padding: 45px 50px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 246, 239, 0.77);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 20px 45px rgba(116, 70, 65, 0.17);
+}
+
+.section-card h2 {
+    font-size: 32px;
+    font-weight: 700;
+
+    color: var(--vino);
+    margin-bottom: 20px;
+}
+
+.section-card p {
+    font-size: 16px;
+    line-height: 2;
+    color: #66514c;
+}
+
+
+/* ==========================================
+   LISTA DE INTERESES Y HABILIDADES
+========================================== */
+
+.lista-bonita {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.lista-bonita li {
+    padding: 18px 20px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        125deg,
+        rgba(249, 222, 208, 0.90),
+        rgba(255, 244, 234, 0.85)
+    );
+
+    border: 1px solid rgba(234, 192, 177, 0.40);
+
+    box-shadow: 0 5px 15px rgba(137, 89, 80, 0.07);
+
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--texto);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.lista-bonita li::before {
+    content: "✦";
+    color: var(--terracota);
+    margin-right: 12px;
+}
+
+.lista-bonita li:hover {
+    transform: translateX(5px);
+
+    background: linear-gradient(
+        125deg,
+        #f5d4c8,
+        #fff0e6
+    );
+}
+
+
+/* ==========================================
+   ENLACES FAVORITOS
+========================================== */
+
+.links-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 25px;
+}
+
+.links-box a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 26px;
+
+    border-radius: 40px;
+
+    color: #fffaf6;
+    font-size: 14px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        120deg,
+        var(--coral),
+        var(--terracota),
+        var(--vino)
+    );
+
+    box-shadow: 0 8px 20px rgba(153, 88, 76, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.links-box a:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(153, 88, 76, 0.30);
+}
+
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    margin-top: 75px;
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: rgba(238, 205, 191, 0.65);
+
+    backdrop-filter: blur(15px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.55);
+
+    color: var(--vino);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+}
+
+footer p:first-child {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE: TABLETS
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding: 45px 35px;
+        gap: 35px;
+    }
+
+    .hero-photo {
+        flex-basis: 290px;
+    }
+
+    .hero-photo img {
+        width: 290px;
+        height: 380px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(36px, 5vw, 52px);
+    }
+
+    .nav-menu {
+        gap: 18px;
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVE: MÓVILES
+========================================== */
+
+@media (max-width: 750px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 5%;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px 22px;
+    }
+
+    .hero {
+        width: 94%;
+        min-height: auto;
+
+        flex-direction: column-reverse;
+
+        padding: 35px 25px;
+        gap: 35px;
+
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(34px, 8vw, 46px);
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-photo {
+        flex: none;
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .hero-photo img {
+        width: 100%;
+        height: 390px;
+    }
+
+    .section-card {
+        width: 94%;
+        padding: 30px 25px;
+    }
+
+    .lista-bonita {
+        grid-template-columns: 1fr;
+    }
+
+    .section-card h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ==========================================
+   PANTALLAS PEQUEÑAS
+========================================== */
+
+@media (max-width: 420px) {
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 28px 18px;
+        border-radius: 25px;
+    }
+
+    .hero-photo img {
+        height: 340px;
+        border-radius: 23px;
+    }
+
+    .tag {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .section-card {
+        padding: 25px 20px;
+    }
+
+    .links-box a {
+        flex: 1;
+    }
+}
+
+
+/* ACCESIBILIDAD: REDUCIR ANIMACIONES */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
